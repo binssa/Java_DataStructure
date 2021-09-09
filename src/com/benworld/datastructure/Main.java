@@ -48,9 +48,37 @@ public class Main {
 //		dl.addNodeInside(8, 6);
 //		dl.printAll();
 		
-		MyHashTable ht = new MyHashTable(20);
-		ht.saveData("DaveLee", "01022223333");
-		ht.saveData("Chalie", "01055452222");
-		System.out.print(ht.getData("Chalie"));
+//		MyHash ht = new MyHash(20);
+//		ht.saveData("DaveLee", "01022223333");
+//		ht.saveData("Chalie", "01055452222");
+//		System.out.println(ht.getData("Chalie"));
+		
+//		MyChainingHash ch = new MyChainingHash(20);
+//		ch.saveData("DaveLee", "01022223333");
+//		ch.saveData("Chalie", "01055452222");
+//		ch.saveData("David", "01046465858");
+//		ch.saveData("Drake", "01024243232");
+//		System.out.println(ch.getData("Drake"));
+//		System.out.println(ch.getData("DaveLee"));
+		
+		
+//		MyLinearHash lh = new MyLinearHash(20);
+//		lh.saveData("DaveLee", "01022223333");
+//		lh.saveData("Chalie", "01055452222");
+//		lh.saveData("David", "01046465858");
+//		lh.saveData("Drake", "01024243232");
+//		System.out.println(lh.getData("Drake"));
+//		System.out.println(lh.getData("DaveLee"));
+		
+		BinaryTree bt = new BinaryTree();
+		bt.insertNode(5);
+		bt.insertNode(3);
+		bt.insertNode(1);
+		bt.insertNode(4);
+		bt.insertNode(7);
+		bt.insertNode(9);
+		
+		Node test = bt.search(7);
+		System.out.println(test.value);
 	}
 }

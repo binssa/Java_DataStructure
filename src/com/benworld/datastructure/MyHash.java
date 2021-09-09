@@ -1,19 +1,20 @@
 package com.benworld.datastructure;
 
-public class MyHashTable {
+public class MyHash {
 	public Slot[] hashTable;
 	
-	public MyHashTable(Integer size) {
+	public MyHash(Integer size) {
 		this.hashTable = new Slot[size];
 	}
 	
+	// ±âº» Slot
 	public class Slot {
 		String value;
 		Slot(String value) {
 			this.value = value;
 		}
 	}
-	
+		
 	public Integer hashFunction(String key) {
 		return (int)(key.charAt(0)) % this.hashTable.length;
 	}

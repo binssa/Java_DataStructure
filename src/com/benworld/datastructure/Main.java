@@ -71,14 +71,29 @@ public class Main {
 //		System.out.println(lh.getData("DaveLee"));
 		
 		BinaryTree bt = new BinaryTree();
-		bt.insertNode(5);
-		bt.insertNode(3);
-		bt.insertNode(1);
-		bt.insertNode(4);
+		bt.insertNode(10);
+		bt.insertNode(15);
+		bt.insertNode(13);
+		bt.insertNode(11);
+		bt.insertNode(14);
+		bt.insertNode(18);
+		bt.insertNode(16);
+		bt.insertNode(19);
+		bt.insertNode(17);
 		bt.insertNode(7);
-		bt.insertNode(9);
-		
-		Node test = bt.search(7);
-		System.out.println(test.value);
+		bt.insertNode(8);
+		bt.insertNode(6);
+		System.out.println(bt.deleteNode(15));
+		System.out.println("HEAD : " + bt.head.value);
+		System.out.println("HEAD LEFT : " + bt.head.left.value);
+		System.out.println("HEAD LEFT LEFT : " + bt.head.left.left.value);
+		System.out.println("HEAD LEFT RIGHT : " + bt.head.left.right.value);
+		System.out.println();
+		System.out.println("HEAD RIGHT : " + bt.head.right.value);
+		System.out.println("HEAD RIGHT LEFT : " + bt.head.right.left.value);
+		System.out.println("HEAD RIGHT RIGHT : " + bt.head.right.right.value);
+//		
+//		Node test = bt.search(7);
+//		System.out.println(test.value);
 	}
 }

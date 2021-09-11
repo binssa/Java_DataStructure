@@ -141,8 +141,58 @@ public class BinaryTree {
 		return true;
 	}
 	// Case 3 : Child Node가 두개일 경우
-	// Case 3-1 : 삭제할 노드의 오른쪽 자식 중 가장 작은값
-	// Case 3-2 : 삭제할 노드의 왼쪽 자식 중 가작 큰 값.
+	else {
+		// Case 3-1 : 삭제할 노드가 Parent Node의 왼쪽에 있을 때 
+		if(value < curParentNode.value) {
+			Node changeNode = curNode.right;
+			Node changeParentNode = curNode.right;
+			
+			while(changeNode.left != null) {
+				changeParentNode = changeNode;
+				changeNode = changeNode.left;
+			}
+			// While문 끝나면, changeNode에 삭제할 Node의 오른 쪽 Node 중 가장 작은 값을 가진 Node가 들어감.
+			// Case 3-1-1 : changeNode의 child Node가 없을 때
+			if(changeNode.right == null) {
+				changeParentNode.left = null;
+			}
+			// Case 3-1-2 : changeNode의 child Node가 있을 때
+			else {
+				changeParentNode.left = changeNode.right;
+			}
+			// curParentNode의 왼쪽에 검색한 가장 작은 값이 들어감.
+			curParentNode.left = changeNode;
+			changeNode.right = curNode.right;
+			changeNode.left = curNode.left;
+			
+			curNode = null;
+		}
+		// Case 3-2 : 삭제할 노드가 Parent Node의 오른쪽에 있을 때
+		else {
+			Node changeNode = curNode.right;
+			Node changeParentNode = curNode.right;
+			// 가장 작은 값을 찾기 위한 순회
+			while(changeNode.left != null) {
+				changeParentNode = changeNode;
+				changeNode = changeNode.left;
+			}
+			// Case 3-2-1 : changeNode의 child Node가 없을 때
+			if(changeNode.right == null) {
+				changeParentNode.left = null;
+			}
+			// Case 3-2-2 : changeNode의 child Node가 있을 때
+			else {
+				changeParentNode.left = changeNode.right;
+			}
+			
+			curParentNode.right = changeNode;
+			
+			changeNode.left = curNode.left;
+			changeNode.right = curNode.right;
+			
+			curNode = null;
+		}
+	}
 	return true;// 수정 필요
 	}
 }

@@ -1,5 +1,9 @@
 package com.benworld.datastructure;
 
+import java.util.ArrayList;
+
+import com.benworld.sort.MergeSort;
+
 public class Main {
 
 	public static void main(String[] args) {
@@ -93,14 +97,46 @@ public class Main {
 //		System.out.println("HEAD RIGHT LEFT : " + bt.head.right.left.value);
 //		System.out.println("HEAD RIGHT RIGHT : " + bt.head.right.right.value);
 //		
-		MyHeap heapTest = new MyHeap(15);
-		heapTest.insert(10);
-		heapTest.insert(8);
-		heapTest.insert(5);
-		heapTest.insert(4);
-		heapTest.insert(20);
-		System.out.println(heapTest.heapArray);
-		heapTest.pop();
-		System.out.println(heapTest.heapArray);
+//		MyHeap heapTest = new MyHeap(15);
+//		heapTest.insert(10);
+//		heapTest.insert(8);
+//		heapTest.insert(5);
+//		heapTest.insert(4);
+//		heapTest.insert(20);
+//		System.out.println(heapTest.heapArray);
+//		heapTest.pop();
+//		System.out.println(heapTest.heapArray);
+		
+		ArrayList<Integer> dataList = new ArrayList<Integer>();
+//		dataList.add(10);
+//		dataList.add(44);
+//		dataList.add(9);
+//		dataList.add(55);
+//		dataList.add(7);
+//		dataList.add(82);
+		
+		for(int i=0;i<100;i++) {
+			dataList.add((int)(Math.random()*100));
+		}
+//		
+//		BubbleSort bsort = new BubbleSort();
+//		bsort.sort(dataList);
+		
+//		SelectionSort ssort = new SelectionSort();
+//		ssort.sort(dataList);
+		
+//		InsertionSort isort = new InsertionSort();
+//		isort.sort(dataList);
+		
+//		System.out.println(dataList);
+//		
+//		Fibonachi fibo = new Fibonachi();
+//		System.out.println(fibo.fibo(10));
+//		
+//		Dynamic dy = new Dynamic();
+//		System.out.println(dy.dynamic(10));
+		
+		MergeSort ms = new MergeSort();
+		System.out.println(ms.split(dataList));
 	}
 }

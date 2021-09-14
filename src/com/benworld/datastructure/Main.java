@@ -2,7 +2,7 @@ package com.benworld.datastructure;
 
 import java.util.ArrayList;
 
-import com.benworld.sort.MergeSort;
+import com.benworld.sort.SequentialSearch;
 
 public class Main {
 
@@ -136,7 +136,17 @@ public class Main {
 //		Dynamic dy = new Dynamic();
 //		System.out.println(dy.dynamic(10));
 		
-		MergeSort ms = new MergeSort();
-		System.out.println(ms.split(dataList));
+//		MergeSort ms = new MergeSort();
+//		System.out.println(ms.split(dataList));
+		
+//		QuickSort qs = new QuickSort();
+//		System.out.println(qs.sort(dataList));
+		
+		SequentialSearch ss = new SequentialSearch();
+		System.out.println(ss.search(dataList, 77));
+		
+//		BinarySearch bs = new BinarySearch();
+//		Collections.sort(dataList);
+//		System.out.println(bs.search(dataList, 77));
 	}
 }

@@ -1,8 +1,15 @@
 package com.benworld.datastructure;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.PriorityQueue;
 
-import com.benworld.sort.SequentialSearch;
+import com.benworld.algorithm.Edge;
+import com.benworld.search.BFS;
+import com.benworld.search.DFS;
+import com.benworld.search.Greedy;
+
 
 public class Main {
 
@@ -115,9 +122,9 @@ public class Main {
 //		dataList.add(7);
 //		dataList.add(82);
 		
-		for(int i=0;i<100;i++) {
-			dataList.add((int)(Math.random()*100));
-		}
+//		for(int i=0;i<100;i++) {
+//			dataList.add((int)(Math.random()*100));
+//		}
 //		
 //		BubbleSort bsort = new BubbleSort();
 //		bsort.sort(dataList);
@@ -142,11 +149,54 @@ public class Main {
 //		QuickSort qs = new QuickSort();
 //		System.out.println(qs.sort(dataList));
 		
-		SequentialSearch ss = new SequentialSearch();
-		System.out.println(ss.search(dataList, 77));
+//		SequentialSearch ss = new SequentialSearch();
+//		System.out.println(ss.search(dataList, 77));
 		
 //		BinarySearch bs = new BinarySearch();
 //		Collections.sort(dataList);
 //		System.out.println(bs.search(dataList, 77));
+
+		// HashMap CRUD
+		// Creata
+//		HashMap<String, ArrayList<String>> graph = new HashMap<String, ArrayList<String>>();
+//		graph.put("A", new ArrayList<String>(Arrays.asList("B","C")));
+//		graph.put("B", new ArrayList<String>(Arrays.asList("A","D")));
+//		graph.put("C", new ArrayList<String>(Arrays.asList("A","G", "H", "I")));
+//		graph.put("D", new ArrayList<String>(Arrays.asList("B","E", "F")));
+//		graph.put("E", new ArrayList<String>(Arrays.asList("D")));
+//		graph.put("F", new ArrayList<String>(Arrays.asList("D")));
+//		graph.put("G", new ArrayList<String>(Arrays.asList("C")));
+//		graph.put("H", new ArrayList<String>(Arrays.asList("C")));
+//		graph.put("I", new ArrayList<String>(Arrays.asList("C","J")));
+//		graph.put("J", new ArrayList<String>(Arrays.asList("I")));
+		
+//		BFS bfs = new BFS();
+//		System.out.println(bfs.bfsFunc(graph, "A"));
+//		
+//		DFS dfs = new DFS();
+//		System.out.println(dfs.dfsFunc(graph, "A"));
+//		
+//		ArrayList<Integer> coin = new ArrayList<Integer>(Arrays.asList(500, 100, 50, 1));
+//		Greedy gd = new Greedy();
+//		gd.coinFunc(4720, coin);
+//		
+//		Integer[][] objectList = {{10,10},{15,12},{20,10},{25,8},{30,5}};
+//		gd.knapsackFunc(objectList, 30.0);
+		
+		PriorityQueue<Edge> pq = new PriorityQueue<Edge>();
+		pq.add(new Edge(2,"A"));
+		pq.add(new Edge(5,"B"));
+		pq.offer(new Edge(1,"C"));
+		pq.add(new Edge(7,"D"));
+		System.out.println(pq);
+		pq.peek();
+		System.out.println(pq);
+		// peek() 꺼내지만 삭제하지 않음;
+		// poll() 꺼내면서 삭제함.
+		HashMap<String, ArrayList<Edge>> graph = new HashMap<String, ArrayList<Edge>>();
+		graph.put("A", new ArrayList<Edge>(Arrays.asList(new Edge(8, "B"), new Edge(1, "C"),new Edge(2, "D"))));
+		graph.put("B", new ArrayList<Edge>());
+		graph.put("C", new ArrayList<Edge>(Arrays.asList(new Edge(5, "B"), new Edge(2, "D"))));
+		
 	}
 }

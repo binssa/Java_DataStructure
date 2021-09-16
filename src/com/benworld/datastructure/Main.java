@@ -5,10 +5,8 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.PriorityQueue;
 
+import com.benworld.algorithm.Dijkstra;
 import com.benworld.algorithm.Edge;
-import com.benworld.search.BFS;
-import com.benworld.search.DFS;
-import com.benworld.search.Greedy;
 
 
 public class Main {
@@ -197,6 +195,11 @@ public class Main {
 		graph.put("A", new ArrayList<Edge>(Arrays.asList(new Edge(8, "B"), new Edge(1, "C"),new Edge(2, "D"))));
 		graph.put("B", new ArrayList<Edge>());
 		graph.put("C", new ArrayList<Edge>(Arrays.asList(new Edge(5, "B"), new Edge(2, "D"))));
+		graph.put("D", new ArrayList<Edge>(Arrays.asList(new Edge(3, "E"), new Edge(5, "F"))));
+		graph.put("E", new ArrayList<Edge>(Arrays.asList(new Edge(1, "F"))));
+		graph.put("F", new ArrayList<Edge>(Arrays.asList(new Edge(5, "A"))));
 		
+		Dijkstra dj = new Dijkstra();
+		System.out.println(dj.dijkstraFunc(graph, "A"));
 	}
 }
